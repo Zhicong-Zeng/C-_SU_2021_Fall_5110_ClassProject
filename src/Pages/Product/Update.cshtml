@@ -1,0 +1,58 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.UpdateModel
+
+@{ ViewData["Title"] = "Update page"; }
+
+<!--
+    Update.cshtml
+    Desc: Updates a product's name, description, url, and/or image
+    -->
+<h1 class="title">Update</h1>
+
+<div class="container">
+    <!--Update Form-->
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x => x.Product.Id)
+
+        <!--Title-->
+        <div class="form-group">
+            <label asp-for="Product.Title" class="control-label"></label>
+            <input asp-for="Product.Title" class="form-control" placeholder="e.g. 'Mona Lisa'" />
+            <span asp-validation-for="Product.Title" class="text-danger"></span>
+        </div>
+
+        <!--Artist-->
+        <div class="form-group">
+            <label asp-for="Product.Artist" class="control-label"></label>
+            <input asp-for="Product.Artist" class="form-control" placeholder="e.g. 'Leonardo Da Vinci'" />
+            <span asp-validation-for="Product.Artist" class="text-danger"></span>
+        </div>
+
+        <!--Description-->
+        <div class="form-group">
+            <label asp-for="Product.Description" class="control-label"></label>
+            <input asp-for="Product.Description" class="form-control" placeholder="Description of Artpiece" />
+            <span asp-validation-for="Product.Description" class="text-danger"></span>
+        </div>
+
+        <!--Image-->
+        <div class="form-group">
+            <label asp-for="Product.Image" class="control-label"></label>
+            <input asp-for="Product.Image" class="form-control" placeholder="URL to image" />
+            <span asp-validation-for="Product.Image" class="text-danger"></span>
+        </div>
+
+        <!--Submit button-->
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

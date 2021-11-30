@@ -1,0 +1,333 @@
+﻿body {
+    background-color: #2d383c;
+}
+
+.bg-navbar {
+    background: -webkit-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: -o-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: -moz-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: linear-gradient( 110deg, #247BA0 60%, #006494 60%);
+}
+
+.navbar-light .navbar-brand {
+    color: #192428;
+}
+
+.navbar-brand.title {
+    color: #E8F1F2;
+}
+
+.navbar.navbar-default {
+    border: none;
+}
+
+.navbar.navbar-default .navbar-collapse {
+    border: none;
+    box-shadow: none;
+}
+
+.footer.bg-footer {
+    border: none;
+    box-shadow: none;
+}
+
+.title {
+    color: #E8F1F2;
+}
+
+.nav-item .nav-link.title {
+    color: #E8F1F2;
+}
+
+.card-text {
+    color: #E8F1F2;
+}
+
+.text-dark {
+    color: #192428 !important;
+}
+
+.about-title, .about-content {
+    color: #E8F1F2;
+}
+
+
+.toggle-switch {
+    color: #E8F1F2;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    position: relative;
+    width: 93%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    height: auto;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.search-container button {
+    padding: 6px 10px;
+    background: #ddd;
+    cursor: pointer;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+
+.search-container button:hover {
+    background: #ccc
+}
+
+
+.table {
+    color: #E8F1F2;
+}
+
+.control-label {
+    color: #E8F1F2;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #13293D;
+    border-color: #247BA0;
+    background-color: #247BA0;
+}
+
+
+.checked {
+    color: orange;
+}
+
+.fa-star {
+    cursor: pointer;
+}
+
+.text-muted {
+    color: #E8F1F2 !important
+}
+
+.btn-primary:hover {
+}
+
+.btn-secondary {
+    color: #E8F1F2;
+    background-color: #006494;
+}
+
+    .btn-secondary:hover {
+        background-color: #1B98E0;
+    }
+
+.drk-md-light-text {
+    color: #E8F1F2;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+.card-columns .card:hover .card-img {
+    opacity: 1;
+    -webkit-transform-style: preserve-3d;
+}
+
+.card-columns .card-body {
+    height: 100px;
+    font-family: 'Poppins', sans-serif;
+    color: #E8F1F2;
+    background: #414c50;
+}
+
+.card-columns .card-img {
+    height: 330px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
+}
+
+.modal .card-img {
+    height: 500px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.modal-body {
+    background-color: #414c50;
+    color: #E8F1F2;
+    border: none;
+}
+
+.modal-footer {
+    background-color: #414c50;
+    color: #E8F1F2;
+    border: none;
+}
+
+.modal-header {
+    background-color: #414c50;
+    color: #E8F1F2;
+    border: none;
+}
+
+.card-columns .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+}
+
+.card {
+    background-color: #414c50;
+    border: none;
+}
+
+.card-footer {
+    background: #414c50;
+}
+
+/*.navbar-light .navbar-brand {
+    color: #13293D;
+}*/
+
+a.navbar-brand {
+    white-space: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #E8F1F2;
+}
+
+    a.navbar-brand:hover {
+        color: #006494;
+    }
+
+    a:hover {
+        color: #006494;
+    }
+
+.btn-primary {
+    color: #E8F1F2;
+    background-color: #006494;
+    border-color: #13293D;
+}
+
+    .btn-primary:hover {
+        color: #E8F1F2;
+        background-color: #247BA0;
+        border-color: #1B98E0;
+    }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/*.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}*/
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+/*Backgrounds*/
+/*.bg-navbar {
+    background: -webkit-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
+    background: -o-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
+    background: -moz-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
+    background: linear-gradient(110deg, #E8F1F2 60%, #247BA0 60%);
+}*/
+
+.bg-footer {
+    background: -webkit-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: -o-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: -moz-linear-gradient(110deg, #247BA0 60%, #006494 60%);
+    background: linear-gradient( 110deg, #006494 60%, #247BA0 60%);
+}
+
+/*Comment Form*/
+input[type=text], select, textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #E8F1F2;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: vertical;
+}

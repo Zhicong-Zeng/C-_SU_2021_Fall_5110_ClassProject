@@ -1,0 +1,64 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Components
+@using System.ComponentModel.DataAnnotations;
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.ReadModel
+
+@{
+    ViewData["Title"] = "Read page";
+}
+
+<!--
+    Read.cshtml
+    Desc: Displays a product's details
+    -->
+<h1 class="title">Read</h1>
+
+<div class="container">
+    @Html.HiddenFor(x => x.Product.Id)
+    <!--Product Title-->
+    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
+
+    <!--Product Image-->
+    <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+
+    <!--Product Description-->
+    <p class="card-text">@Model.Product.Description</p>
+
+    <!--Comment Posting Form-->
+    <h4 class="title">Add a Comment</h4>
+    <form method="post">
+       
+            <textarea id="comment" name="comment" class="form-control"></textarea>
+            <br />
+            <input type="submit" value="Post Comment" class="btn btn-primary" />
+        </form>
+    <br />
+
+    <!--Display all comments-->
+    <h4 class="drk-md-light-text">Comments</h4>
+        <br />
+        @if (Model.Product.Comments != null)
+        {
+
+            @foreach (var comment in Model.Product.Comments)
+            {
+                <h5 class="drk-md-light-text">Comment by Anon:</h5>
+                <p class="drk-md-light-text">@comment</p>
+            }
+
+        }
+
+</div>
+
+<br />
+<br />
+
+<div class="row">
+    <!--Update Post Button-->
+    <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Edit Post</a> &nbsp; &nbsp;
+
+    <!--Delete Post Button-->
+    <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
+</div>

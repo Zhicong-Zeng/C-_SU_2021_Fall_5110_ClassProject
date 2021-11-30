@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Temporary Wall</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/dark_mode.css" id="theme-link" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/animation.css">
+</head>
+<body>
+    <header>
+        <!--Nav Bad-->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand title" asp-area="" asp-page="/Home">Temporary Wall</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @*The head of page change the link*@
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link title" asp-area="" asp-page="/Aboutus/MemberIndex">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link title" asp-area="" asp-page="/Product/Index">Artworks</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Dark mode toggle button-->
+                <div class="custom-control custom-switch toggle-switch">
+                    <input type="checkbox" class="custom-control-input dark-mode-switch" id="customSwitch1">
+                    <label id="dark-mode-label" class="custom-control-label" for="customSwitch1">Switch to Light Mode</label>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Main Body-->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--Footer-->
+    @*The bottom of page change the link*@
+        <footer class="border-top footer text-muted bg-footer">
+            <div class="container">
+                &copy; 2021 - TemporaryWall.Website - <a asp-area="" asp-page="/Aboutus/MemberIndex">About Us</a>
+            </div>
+        </footer>
+
+    <!--Scripts-->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script src="/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

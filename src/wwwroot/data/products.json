@@ -1,0 +1,263 @@
+[
+  {
+    "Id": "the-starry-night",
+    "Artist": "Vincent van Gogh",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/1f/e7/fd/1280px-van-gogh-starry-night-google-art-project.jpg",
+    "Title": "The Starry Night",
+    "Description": "The painting was made in 1889 and depicts the city of Saint-Remy under the swirling sun.",
+    "Ratings": [
+      5,
+      5,
+      3,
+      2,
+      1,
+      5,
+      5
+    ],
+    "Comments": [
+      "Pretty cool painting, I guess",
+      "here is another comment",
+      "Yo does this work?",
+      "O hi there"
+    ]
+  },
+  {
+    "Id": "mona-lisa",
+    "Artist": "Leonardo Da Vinci",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/5c/4a/1e/800px-mona-lisa-by-leonardo-da-vinci-from-c2rmf-retouched.jpg",
+    "Title": "Mona Lisa",
+    "Description": "Inarguably the most famous painting to have ever been created in the Western World, the Mona Lisa was painted by Leonardo da Vinci between 1503 and 1506. He finished working on it in 1519. The painting is displayed in Louvre museum of Paris.",
+    "Ratings": [
+      1
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-last-supper",
+    "Artist": "Leonardo Da Vinci",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/f2/91/94/1600px-u-ltima-cena-da-vinci-5.jpg",
+    "Title": "The Last Supper",
+    "Description": "The painting depicts the Last Supper of Jesus and His disciples. It is said to portay the confusion that ensued after Jesus declared that one of them would betray him.",
+    "Ratings": [
+      4
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-scream",
+    "Artist": "Edward Munch",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/5f/96/29/edvard-munch-1893-the-scream-oil-tempera-and-pastel-on-cardboard-91-x-73-cm-national-gallery-of-norway.jpg",
+    "Title": "The Scream",
+    "Description": "The painting shows a frightened person screaming. The painting is housed in the National Gallery, Oslo, Norway.",
+    "Ratings": [
+      3
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-girl-with-a-pearl-earing",
+    "Artist": "Johannes Vermeer",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/9d/d2/c4/meisje-met-de-parel.jpg",
+    "Title": "The Girl With A Pearl Earring",
+    "Description": "It was painted around 1665 and portrays a turbaned girl with a pearl earring. The painting has been called the \u0022Dutch Mona Lisa\u0022, mostly due to the ambiguous expression of the subject.",
+    "Ratings": [
+      3,
+      3,
+      4,
+      5,
+      2,
+      1,
+      5
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "guernica",
+    "Artist": "Pablo Picasso",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/ca/27/70/shutterstock-337184468.jpg",
+    "Title": "Guernica",
+    "Description": " The 1937 painting is housed in the Museo Reina Sofia in Madrid. It is considered to be one of the most important anti-war works of art in history.",
+    "Ratings": [
+      3
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-birth-of-venus",
+    "Artist": "Sandro Botticelli",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/d3/75/8b/1599px-sandro-botticelli-la-nascita-di-venere-google-art-project-edited.jpg",
+    "Title": "The Birth of Venus",
+    "Description": "The Birth of Venus depicts the emergence of the goddess Venus from the sea. The painting was made by Sandro Botticelli in the mid-1480s.",
+    "Ratings": [
+      4
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-night-watch",
+    "Artist": "Rembrandt",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/45/77/b8/shutterstock-377749780.jpg",
+    "Title": "The Night Watch",
+    "Description": "It depicts the departure of a city led by its captain. The painting is displayed at the Rijksmuseum in Amsterdam.",
+    "Ratings": [
+      3
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-persistance-of-memory",
+    "Artist": "Salvador Dali",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/af/d1/ed/persistenceofmemory.jpg",
+    "Title": "The Persistence Of Memory",
+    "Description": "The Persistence of Memory depicts melting clock faces and is thought to have been inspired by the Theory of Relativity. The painting is displayed at the MoMA.",
+    "Ratings": null,
+    "Comments": null
+  },
+  {
+    "Id": "Whistler\u0027s Mother\u0027",
+    "Artist": "James Mcneill Whistler",
+    "img": "https://www.worldatlas.com/r/w960-q80/upload/ca/13/25/whistlers-mother-high-res.jpg",
+    "Title": "Whistler\u0027s Mother",
+    "Description": "Whistler\uFFFDs Mother, or the Arrangement in Grey and Black, was painted in 1871 by James McNeill Whistler showing his mother seated on a chair against a gray wall.",
+    "Ratings": [
+      5,
+      3,
+      3,
+      1,
+      4
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "st-george-and-the-dragon",
+    "Artist": "Raphael",
+    "img": "https://www.artandobject.com/sites/default/files/styles/gallery_item/public/raphael-saint-george-and-dragon-1506-oil-panel-1122-x-846-285-x-215-cm-national-gallery-art.jpg?h=9b09a626\u0026itok=VY-RvbZw",
+    "Title": "St. George and the Dragon",
+    "Description": "A symbol of Christian chivalry and selflessness, the saint\uFFFDs influence has left a lasting impression on Western culture. Responsible for the common fantasy trope of the knight slaying the dragon, his legend inspired more modern stories like Lord of the Rings, Shrek, and countless other creations from Shakespeare monologues to arcade games.",
+    "Ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "american-gothic",
+    "Artist": "Grant Wood",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/240px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
+    "Title": "American Gothic",
+    "Description": "Wood was inspired to paint what is now known as the American Gothic House in Eldon, Iowa, along with \u0022the kind of people [he] fancied should live in that house\u0022. It depicts a farmer standing beside his daughter \uFFFD often mistakenly assumed to be his wife.",
+    "Ratings": [
+      2
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "the-great-wave-off-kanagawa",
+    "Artist": "Hokusai",
+    "img": "https://www.touropia.com/gfx/b/2010/10/the_great_wave_off_kanagawa.jpg",
+    "Title": "The Great Wave off Kanagawa",
+    "Description": "The Great Wave off Kanagawa was produced by Hokusai using a woodblock print technique sometime between 1829 and 1833. The stunning scene, with its vivid blues, sees an enormous wave threatening to engulf three fishing boats.",
+    "Ratings": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "composition-abstraite",
+    "Artist": "Serge Poliakoff",
+    "img": "https://sothebys-com.brightspotcdn.com/dims4/default/a473902/2147483647/strip/true/crop/4830x3559\u002B0\u002B0/resize/1303x960!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F8c%2F4e%2Ff4fe0a95487d80de0854f2264296%2Fmodernites-highlights-2019-paris-crop-216pf1916-bcbjc-1.jpg",
+    "Title": "Composition Abstraite",
+    "Description": "Composition Abstraite by Serge Poliakoff",
+    "Ratings": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "self-portrait",
+    "Artist": "Vincent Van Gogh",
+    "img": "https://static01.nyt.com/images/2007/03/23/arts/25gogh450.1.jpg?quality=75\u0026auto=webp\u0026disable=upscale",
+    "Title": "Self-Portrait",
+    "Description": "The artist is wearing a suit and not the pea jacket he usually worked in. Attention is focused on the face. His features are hard and emaciated, his green-rimmed eyes seem intransigent and anxious.",
+    "Ratings": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "Comments": null
+  },
+  {
+    "Id": "619737e3-5880-4c1e-95d6-c079346568aa",
+    "Artist": "",
+    "img": "",
+    "Title": "",
+    "Description": "",
+    "Ratings": null,
+    "Comments": null
+  },
+  {
+    "Id": "Testid",
+    "Artist": "Vincent Van Gogh",
+    "img": "",
+    "Title": "TestTitle",
+    "Description": "",
+    "Ratings": null,
+    "Comments": null
+  },
+  {
+    "Id": "581057b7-0177-4fba-8b63-6469219ef43d",
+    "Artist": "",
+    "img": "",
+    "Title": "",
+    "Description": "",
+    "Ratings": null,
+    "Comments": null
+  }
+]

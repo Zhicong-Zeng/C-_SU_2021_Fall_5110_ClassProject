@@ -1,0 +1,99 @@
+﻿@page
+@model ContosoCrafts.WebSite.Pages.Product.IndexModel
+@{
+    ViewData["Title"] = "Index page";
+}
+
+<!--Index.cshtml
+    Desc: Displays a list of all products(arts).
+    -->
+<div class="container">
+    <!--Create new product button-->
+    <a asp-page="Create" class="btn btn-link title">Create +</a>
+
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort Artworks
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/Product?sortOrder=title_asc">Title Ascending (A-Z)</a>
+            <a class="dropdown-item" href="/Product?sortOrder=title_desc">Title Descending (Z-A)</a>
+            <a class="dropdown-item" href="/Product?sortOrder=artist_asc">Artist Name Ascending (A-Z)</a>
+            <a class="dropdown-item" href="/Product?sortOrder=artist_desc">Artist Name Descending (Z-A)</a>
+            <a class="dropdown-item" href="/Product?sortOrder=rating_desc">Ratings Descending (Highest to Lowest)</a>
+            <a class="dropdown-item" href="/Product?sortOrder=rating_asc">Ratings Ascending (Lowest to Highest)</a>
+        </div>
+    </div>
+
+    <br />
+
+    <!--Table of Products-->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Loop to display each product;each iteration makes new row-->
+            @foreach (var product in Model.Products)
+            {
+                @if (product.Artist == "" || product.Title == "" || product.Description == "" || product.Image == "")
+                {
+                    continue;
+                }
+                else
+                {
+                    <tr>
+                        <!--Tile for product name-->
+                        <td><a class="read-link" asp-page="Read" asp-route-id="@product.Id">@product.Title</a></td>
+
+                        <!--Tile for product's artist'-->
+                        <td>@product.Artist</td>
+
+                        <!--Tile for product's ratings'-->
+                        @if (product.Ratings != null)
+                        {
+                            var sum = product.Ratings.Sum();
+                            var num = product.Ratings.Length;
+                            var AverageRate = sum / num;
+                            switch (AverageRate)
+                            {
+                                case 1:
+                                    <td>⭐</td>
+                                    break;
+                                case 2:
+                                    <td>⭐⭐</td>
+                                    break;
+                                case 3:
+                                    <td>⭐⭐⭐</td>
+                                    break;
+                                case 4:
+                                    <td>⭐⭐⭐⭐</td>
+                                    break;
+                                case 5:
+                                    <td>⭐⭐⭐⭐⭐</td>
+                                    break;
+                                default:
+                                    <td>No one Rate</td>
+                                    break;
+                            }
+                        }
+
+                        @if (product.Ratings == null)
+                        {
+                            <td>No one Rate</td>
+                        }
+
+                        <td>
+                            <a class="btn btn-primary" asp-page="Read" asp-route-id="@product.Id">View</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

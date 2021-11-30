@@ -1,0 +1,59 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.DeleteModel
+
+@{ ViewData["Title"] = "Delete page"; }
+
+<!--Delete.cshtml
+    Desc: Deletes product from database
+    -->
+<h1 class="drk-md-light-text">Delete</h1>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x => x.Product.Id)
+        @Html.HiddenFor(x => x.Product.Artist)
+        @Html.HiddenFor(x => x.Product.Description)
+        @Html.HiddenFor(x => x.Product.Title)
+        @Html.HiddenFor(x => x.Product.Image)
+
+
+        <!--Product Title-->
+        <div class="form-group">
+            <label asp-for="Product.Title" class="control-label"></label>
+            <input asp-for="Product.Title" class="form-control" disabled />
+        </div>
+
+        <!--Product Artist-->
+        <div class="form-group">
+            <label asp-for="Product.Artist" class="control-label"></label>
+            <input asp-for="Product.Artist" class="form-control" disabled />
+        </div>
+
+        <!--Product Description-->
+        <div class="form-group">
+            <label asp-for="Product.Description" class="control-label"></label>
+            <input asp-for="Product.Description" class="form-control" disabled />
+        </div>
+
+        <!--Product Image-->
+        <div class="form-group">
+            <label asp-for="Product.Image" class="control-label"></label>
+            <input asp-for="Product.Image" class="form-control" disabled />
+        </div>
+
+        <h1 class="drk-md-light-text">Confirm Deletion of this item</h1>
+
+        <!--Delete button-->
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

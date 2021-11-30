@@ -1,0 +1,212 @@
+@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
+@using System.Collections.Generic;
+@using Microsoft.AspNetCore.Mvc;
+@inject JsonFileProductService ProductService
+
+    <div class="form-row">
+        <div class="input-group">
+            <div class="col-10 pr-0">
+                <div class="form-outline">
+                    <input type="search" id="searchinput" class="form-control input-large" @bind="@SearchTerm" placeholder="Search"/>
+                </div>
+            </div>
+            <div class="col-2 pr-0 pl-1">
+                <button type="button" id="searchbutton" class="btn btn-primary mb-3" @onclick="StateHasChanged">Search</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-columns">
+        <!--Generates individual cards for each product-->
+        @foreach (var product in GetProducts())
+        {
+            if (ProductIsBlankOrNull(product))
+            {
+                continue;
+            }
+            <div class="card fade-in">
+                <!--Display product image-->
+                <div class="card-img" style="background-image: url('@product.Image');"></div>
+
+                <!--displays product title on card-->
+                <div class="card-body">
+                    <h5 class="card-title">@product.Title</h5>
+                    <h5 class="card-title">@product.Artist</h5>
+                </div>
+
+                <div class="card-footer">
+                    <!--More Info button-->
+                    <small class="text-muted">
+                        <button @onclick="(e => SelectProduct(product.Id))"
+                                id="MoreInfoButton_@product.Id" 
+                                data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                            More Info
+                        </button>
+                    </small>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (selectedProduct != null)
+    {
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productTitle">@selectedProduct.Title </h5> <!--Display product title-->
+                        <h5 class="modal-title" id="productArtist">: @selectedProduct.Artist</h5> <!--Display product artist-->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <!--Close button-->
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-img" style="background-image: url('@selectedProduct.Image');">
+                                <!--Display product image-->
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">@selectedProduct.Description</p> <!--Display product description-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Shows vote count-->
+                    <div class="modal-footer">
+                        @if (voteCount == 0)
+                        {
+                            <span>Be the first to vote!</span> }
+                        else
+                        {
+                            <span>@voteCount @voteLabel</span>}
+                        @for (int i = 1; i < 6; i++)
+                        {
+                            var currentStar = i;
+                            if (i <= currentRating)
+                            {
+                                <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span> }
+                            else
+                            {
+                                <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>}
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+
+    @code
+{
+        ProductModel selectedProduct;
+        string selectedProductId;
+
+        string SearchTerm { get; set; }
+
+        /// <summary>
+        /// Retrieves specific product information
+        /// </summary>        
+        void SelectProduct(string productId)
+        {
+            selectedProductId = productId;
+            selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
+            GetCurrentRating();
+        }
+
+        int currentRating = 0;
+        int voteCount = 0;
+        string voteLabel;
+
+        /// <summary>
+        /// Retrieves current ratings   
+        /// </summary>
+        void GetCurrentRating()
+        {
+            //Checks if there are ratings
+            if (selectedProduct.Ratings == null) // product with no ratings
+            {
+                currentRating = 0;
+                voteCount = 0;
+            }
+            else // product with ratings
+            {
+                voteCount = selectedProduct.Ratings.Count(); //retrieves number of votes
+                voteLabel = voteCount > 1 ? "Votes" : "Vote";
+                currentRating = selectedProduct.Ratings.Sum() / voteCount; //calculates average of all votes
+            }
+
+            System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
+        }
+
+        /// <summary>
+        /// Function to submit ratings
+        /// </summary>
+        /// <param name="rating"></param>
+        void SubmitRating(int rating)
+        {
+            ProductService.AddRating(selectedProductId, rating); // Adds rating to JSON database
+            SelectProduct(selectedProductId);
+        }
+
+        /// <summary>
+        /// Search all the products to find matches from a given string
+        /// </summary>
+        /// <returns>Enumerable collection of Products that contain a search term</returns>
+        IEnumerable<ProductModel> GetSearchProducts()
+        {
+            // create enumerable of products to search through
+            IEnumerable<ProductModel> ProductList = ProductService.GetProducts();
+
+            // create list of ProductModel to store results
+            List<ProductModel> Results = new List<ProductModel>();
+
+            // loop through products and add matches to the results list
+            foreach (var product in ProductList)
+            {
+                if (product.Title.ToLower().Contains(SearchTerm.ToLower()) ||
+                    product.Artist.ToLower().Contains(SearchTerm.ToLower()) ||
+                    product.Description.ToLower().Contains(SearchTerm.ToLower()))
+                {
+                    Results.Add(product);
+                }
+            }
+
+            // return result of search
+            return Results;
+        }
+
+        /// <summary>
+        /// Gets all products in DB when there is no search term.  When a search term
+        /// is set this will return all matching products
+        /// </summary>
+        /// <returns>Enumerable collection of products</returns>
+        IEnumerable<ProductModel> GetProducts()
+        {
+            if (string.IsNullOrEmpty(SearchTerm))
+            {
+                return ProductService.GetProducts();
+            }
+            return GetSearchProducts();
+        }
+
+        /// <summary>
+        /// Utility method to check if a product contains blank or null values
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>true if the passed in product is empty or null</returns>
+        Boolean ProductIsBlankOrNull(ProductModel product)
+        {
+            // null checks
+            if (product.Artist == null || product.Title == null || product.Id == null || product.Description == null || product.Artist == "" || product.Title == "" || product.Id == "" || product.Description == "")
+            {
+                return true;
+            }
+            // all checks passed, return false
+            return false;
+        }
+    }

@@ -1,0 +1,30 @@
+﻿@page
+@model ContosoCrafts.WebSite.Pages.LandingModel
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+@* Container for all items on the landing page*@
+<div class="header-container">    
+    <div class="landing-text">
+        <h1 class="landing-header focus-in-expand-fwd">TEMPORARY WALL</h1>
+        <a id="landing-link" class="navbar-brand focus-in-expand-fwd" asp-area="" asp-page="/Home">WELCOME</a>
+
+        <br />
+
+        @* This is the three card tile top 3 artowkrs tile *@
+        <div class="card-columns">
+        @foreach (var product in Model.TopThreeArtwork)
+        { 
+            <div class="card">
+                <!--Display product image-->
+                <div class="card-img" style="background-image: url('@product.Image');"></div>
+            </div>
+        }
+        </div> 
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="/css/landing.css" id="theme-link" />
